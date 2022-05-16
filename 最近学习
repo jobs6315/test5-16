@@ -1,0 +1,611 @@
+
+//#include<string.h>
+//int main()
+//{
+//	int num = 10;
+//	int a = num << 1;
+//	printf("%d ", a);
+//
+//}
+//int main()
+//{
+//	char a = 5;
+//	//00000000 00000000 00000000 00000101
+//	//00000101 - a
+//	char b = 126;
+//	//00000000 00000000 00000000 01111110
+//	//01111110 - b
+//	char c = a + b;
+//	//00000000 00000000 00000000 00000101 - a
+//	//00000000 00000000 00000000 01111110 - b
+//	//10000011 -c
+//	//11111111 11111111 11111111 10000011 - 补码
+//	//11111111 11111111 11111111 10000010 - 反码
+//	//10000000 00000000 00000000 01111101 - 源码
+//
+//
+//	printf("%d\n", c);
+//
+//}
+//int main()
+//{
+//	unsigned char a = 0xb6;
+//	short b = 0xb600;
+//	int c = 0xb6000000;
+//	if (a == 0xb6)
+//	{
+//		printf("a");
+//	}
+//	if (b == 0xb600)
+//	{
+//		printf("b");
+//	}
+//	if (c == 0xb6000000)
+//	{
+//		printf("c");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char c = 1;
+//	printf("%u\n", sizeof(c));//1
+
+//	return 0;
+//}
+
+//int fun()
+//{
+//	static int count = 1;
+//	return ++count;
+//}
+//int main()
+//{
+//	int answer;
+//	answer = fun() - fun() * fun();
+//	printf("%d\n", answer);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int num = -1;
+//	int count = 0;
+//	while (num)
+//	{
+//		if (num % 2 == 1)
+//			count++;
+//			num = num / 2;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+//int main()
+//{
+//	int num = -1;
+//	int i = 0;
+//	int count = 0;
+//	for (i = 0;i < 32;i++)
+//	{
+//		if (num & (1 << i))
+//			count++;
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf_s("%d %d", &a, &b);
+//	int c = a ^ b;
+//	int count = 0;
+//	int i = 0;
+//	for (i = 0;i < 32;i++)
+//	{
+//		if (c & (1 << i))
+//			count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+//void Printbit(int a)
+//{
+//	int i = 0;
+//	for (i = 31;i >= 1;i -= 2)
+//	{
+//		printf("%d", (a >> i) & 1);
+//	}
+//	printf("\n");
+//	for (i = 30;i >= 0;i -= 2)
+//	{
+//		printf("%d", (a >> i) & 1);
+//	}
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf_s("%d", &a);
+//	Printbit(a);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf_s("%d", &a);
+//	int i = 0;
+//	int count = 0;
+//	for (i = 0;i < 32;i++)
+//	{
+//		if (a & (1 << i))
+//			count++;
+//	}
+//	printf("%d\n", count);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf_s("%d %d", &a, &b);
+//	a = a + b;
+//	b = a - b;
+//	a = a - b;
+//	printf("%d %d", a, b);
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf_s("%d %d", &a, &b);
+//	a = a ^ b;
+//	b = a ^ b;
+//	a = a ^ b;
+//	printf("%d %d", a, b);
+//	return 0;
+//}
+//int i;
+//int main()
+//{
+//    i--;
+//    if (i > sizeof(i))
+//    {
+//        printf(">\n");
+//    }
+//    else
+//    {
+//        printf("<\n");
+//    }
+//    return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf_s("%d", &a);
+//	int i = 0;
+//	for (i = 0;i < a;i++)
+//	{
+//		int j = 0;
+//		for (j = 0;j < a;j++)
+//		{
+//			if (i == j || i + j == a - 1)
+//			{
+//				printf("*");
+//			}
+//			else
+//			{
+//				printf(" ");
+//			}
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0;//年份
+//	int b = 0;//月份
+//	while (scanf_s("%d %d", &a, &b))
+//	{
+//		switch (b)
+//		{
+//		case 1:
+//			printf("31");
+//			break;
+//		case 3:
+//			printf("31");
+//			break;
+//		case 5:
+//			printf("31");
+//			break;
+//		case 7:
+//			printf("31");
+//			break;
+//		case 8:
+//			printf("31");
+//			break;
+//		case 10:
+//			printf("31");
+//			break;
+//		case 12:
+//			printf("31");
+//			break;
+//		case 4:
+//			printf("30");
+//			break;
+//		case 6:
+//			printf("30");
+//			break;
+//		case 9:
+//			printf("30");
+//			break;
+//		case 11:
+//			printf("30");
+//			break;
+//		case 2:
+//			if ((a % 4 == 0 && a % 100 != 0) || (a % 400 == 0))
+//			{
+//				printf("29");
+//			}
+//			else
+//			{
+//				printf("28");
+//			}
+//			break;
+//		}
+//	}
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	scanf_s("%d %d %d", &a, &b, &c);
+//	if (b > a)
+//	{
+//		int tmp = a;
+//		a = b;
+//		b = tmp;
+//	}
+//	if (c > b)
+//	{
+//		int tmp = b;
+//		b = c;
+//		c = tmp;
+//	}
+//	if (b > a)
+//	{
+//		int tmp = a;
+//		a = b;
+//		b = tmp;
+//	}
+//	if ((a < b + c) && (c > a - b))
+//	{
+//		if (a == b && a == c)
+//		{
+//			printf("Equilateral triangle!");
+//		}
+//		else if (a == b || b == c )
+//		{
+//			printf("Isosceles triangle!");
+//		}
+//		else
+//			printf("Ordinary triangle!");
+//	}
+//	else
+//	{
+//		printf("Not a triangle!");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	int b = sizeof(&a);
+//	printf("%d ", b);
+//	return 0;
+//}
+//int main()
+//{
+//    int arr[] = { 1,2,3,4,5 };
+//    short* p = (short*)arr;
+//    int i = 0;
+//    for (i = 0; i < 4; i++)
+//    {
+//        *(p + i) = 0;
+//    }
+//
+//    for (i = 0; i < 5; i++)
+//    {
+//        printf("%d ", arr[i]);
+//    }
+//    return 0;
+//}
+//int main()
+//{
+//    int a = 0x11223344;
+//    char* pc = (char*)&a;
+//    *pc = 0;
+//    printf("%x\n", a);
+//    return 0;
+//}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int *p = (int*)arr;
+//	int i = 0;
+//	for (i = 0;i < sz;i++)
+//	{
+//		printf("%d ",*(p + i));
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char arr1[100] = { 0 };
+//	char arr2[100] = { 0 };
+//	int a = 0;
+//	int i = 0;
+//	getchar
+//	return 0;
+//}
+//int main()
+//{
+//	int a = 0;
+//	scanf_s("%d", &a);
+//	int sum = 0;
+//	sum = a + a * 10 + a + a * 100 + a * 10 + a + a * 1000 + a * 100 + a * 10 + a + a * 10000 + a * 1000 + a * 100 + a * 10 + a;
+//	printf("%d+%d+%d+%d+%d=%d", a, a * 10 + a, a * 100 + a * 10 + a, a * 1000 + a * 100 + a * 10 + a, a * 10000 + a * 1000 + a * 100 + a * 10 + a, sum);
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;//n位数
+//	for (i = 1;i <= 6;i++)
+//	{
+//		if()
+//	}
+//
+//}
+//#include<string.h>
+//#include<assert.h>
+//void reverse(char* str)
+//{
+//	assert(str);
+//	int len = strlen(str);
+//	char* left = str;
+//
+//}
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	scanf_s("%s", arr);
+//	reverse(arr);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+//int main()
+//{
+//	int arr1[4] = { 1,2,3,4 };
+//	int arr2[4] = { 2,3,4,5 };
+//	int arr3[4] = { 3,4,5,6 };
+//	
+//	int* parr[3] = { arr1,arr2,arr3 };
+//	int i = 0;
+//	for (i = 0;i < 3;i++)
+//	{
+//		int j = 0;
+//		for (j = 0;j < 4;j++)
+//		{
+//			printf("%d ", parr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+//void print2(struct Peo* sp)
+//{
+//	printf("%s %s %s %d\n",sp->name,sp->tele,sp->sex,sp->high)
+//}
+//void print1(struct Peo p)
+//{
+//	printf("%s %s %s %d\n", p.name, p.tele, p.sex, p.high);
+//}
+//int main()
+//{
+//	struct Peo p1 = { "张三","123456789","男"，181 };
+//	print1(p1);
+//	return 0;
+//}
+#include<stdio.h>
+//#include<string.h>
+//#include<assert.h>
+//void reversr(char* str)
+//{
+//	assert(str);
+//	int len = strlen(str);
+//	char* left = str;
+//	char* right = str + len - 1;
+//	while (left < right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//int main()
+//{
+//	char arr[100] = { 0 };
+//	//scanf_s("%s", arr);
+//	gets_s(arr);
+//	reversr(arr);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+//#include<math.h>
+//int main()
+//{
+//	
+//	int i = 0;
+//	for (i = 0;i <10;i++)
+//	{
+//		int a = i / 1;
+//		if (i = pow(a, 1))
+//			printf("%d ", i);
+//	}
+//	int j = 10;
+//	for (j =10;j <100;j++)
+//	{
+//		int a = j / 10;  //十位数  
+//		int b = j % 10;  //个位数 
+//		if (j = pow(a,2)+pow(b,2))
+//			printf("%d ", j);
+//	}
+//	return 0;
+//}
+//#include <stdio.h>
+//
+//#include <math.h>
+//
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1;i <= 99999;i++)
+//	{
+//		int tmp = i;//各位数
+//		int count = 0;//n
+//		int sum = 0;
+//
+//		while (tmp)
+//		{
+//			tmp /= 10;//各位数
+//			count++;
+//		}
+//		tmp = i;
+//		while (tmp)
+//		{
+//			sum += pow((tmp % 10), count);
+//			tmp /= 10;
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d是水仙花数\n", i);
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1;i <=13;i+=2)
+//	{
+//		printf("*\n");
+//	}
+//	return 0;
+//}
+//打印菱形
+//int main() 
+//{
+//	int n;	//上半部分行数
+//	scanf_s("%d", &n);
+//	//上半部分：
+//	for (int i = 1; i <= n; i++) 
+//	{	//行数做循环条件
+//		//1、打印空格
+//		for (int j = 0; j < n - i; j++) 
+//		{
+//			printf(" ");
+//		}
+//		//2、打印*号
+//		for (int j = 0; j < 2 * i - 1; j++)
+//		{
+//			printf("*");
+//		}
+//		//3、每打印完一排换行
+//		printf("\n");
+//	}
+//	//下半部分：
+//	for (int i = 1; i <= n - 1; i++) 
+//	{
+//		for (int j = 0; j < i; j++) 
+//		{
+//			printf(" ");
+//		}
+//		for (int j = 0; j < 2 * (n - 1 - i) + 1; j++) 
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//struct stu
+//{
+//	int num;
+//	char name[10];
+//	int age;
+//};
+//
+//
+//void fun(struct stu* p)
+//{
+//	printf("%s\n", (*p).name);
+//	return;
+//}
+//
+//
+//int main()
+//{
+//	struct stu students[3] = { {9801,"zhang",20},
+//							  {9802,"wang",19},
+//							  {9803,"zhao",18}
+//	};
+//	fun(students + 1);
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 0;//假设最初有n元
+//	int count = 0;
+//	int sum = 0;
+//	scanf_s("%d", &n);
+//	while (n>=1)
+//	{
+//		sum += n;
+//		n = n / 2;
+//		count++;
+//	}
+//	printf("%d\n", count);
+//	printf("%d", sum);
+//}
+
+//int main()
+//{
+//    printf("%d\n", sizeof(char));
+//    printf("%d\n", sizeof(short));
+//    printf("%d\n", sizeof(int));
+//    printf("%d\n", sizeof(long));
+//    printf("%d\n", sizeof(long long));
+//    printf("%d\n", sizeof(float));
+//    printf("%d\n", sizeof(double));
+//    printf("%d\n", sizeof(long double));
+//    return 0;
+//}
+int main()
+{
+	int a, b, c;
+	a = 5;
+	c = ++a;
+	b = ++c, c++, ++a, a++;
+	b += a++ + c;
+	printf("a = %d b = %d c = %d\n:", a, b, c);
+	return 0;
+}
